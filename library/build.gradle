@@ -19,8 +19,10 @@ apply plugin: 'com.android.library'
 android {
     compileSdkVersion 30
 
+    ndkVersion '21.4.7075529'
+
     defaultConfig {
-        minSdkVersion 18
+        minSdkVersion 17
         targetSdkVersion 30
         versionCode 1
         versionName '1.0'
@@ -28,7 +30,7 @@ android {
         externalNativeBuild {
             cmake {
                 targets 'quickjs-android'
-                arguments '-DCMAKE_VERBOSE_MAKEFILE:BOOL=ON'
+                arguments '-DCMAKE_VERBOSE_MAKEFILE:BOOL=ON', '-DCMAKE_SHARED_LINKER_FLAGS=-Wl,-z,max-page-size=16384'
             }
         }
     }
