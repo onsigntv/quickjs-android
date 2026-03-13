@@ -30,7 +30,7 @@ android {
         externalNativeBuild {
             cmake {
                 targets 'quickjs-android'
-                arguments '-DCMAKE_VERBOSE_MAKEFILE:BOOL=ON', '-DCMAKE_SHARED_LINKER_FLAGS=-Wl,-z,max-page-size=16384'
+                arguments '-DCMAKE_VERBOSE_MAKEFILE:BOOL=ON', '-DCMAKE_SHARED_LINKER_FLAGS=-Wl,-z,max-page-size=16384', '-DANDROID_PLATFORM=android-18'
             }
         }
     }
